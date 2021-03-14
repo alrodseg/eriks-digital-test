@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015.promise", "es2015.iterable", "es2015.symbol", "es5"]
+  }
+}

@@ -1,0 +1,36 @@
+name: Build
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: node:14.11.0-buster
+    steps:
+      - name: Checkout actual branch
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+      - run: yarn
+      - name: Build the project
+      - run: yarn build
+
+  lint:
+    runs-on: ubuntu-latest
+    container: node:14.11.0-buster
+    steps:
+      - name: Checkout actual branch
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+      - run: yarn
+      - name: Run code linter
+      - run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    container: node:14.11.0-buster
+    steps:
+      - name: Checkout actual branch
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+      - run: yarn
+      - name: Run unit tests
+      - run: yarn test:unit
