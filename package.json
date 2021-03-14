@@ -8,7 +8,9 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack serve --hot --config webpack.config.js",
-    "lint": "eslint ./src/**/*.tsx"
+    "lint": "eslint ./src/**/*.tsx",
+    "lint:fix": "eslint --fix ./src/**/*.tsx",
+    "test:unit": "echo 'Not implemented'"
   },
   "dependencies": {
     "react": "^17.0.1",
