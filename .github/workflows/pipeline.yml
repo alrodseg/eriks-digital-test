@@ -7,30 +7,30 @@ jobs:
     container: node:14.11.0-buster
     steps:
       - name: Checkout actual branch
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Install dependencies
-      - run: yarn
+        run: yarn
       - name: Build the project
-      - run: yarn build
+        run: yarn build
 
   lint:
     runs-on: ubuntu-latest
     container: node:14.11.0-buster
     steps:
       - name: Checkout actual branch
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Install dependencies
-      - run: yarn
+        run: yarn
       - name: Run code linter
-      - run: yarn lint
+        run: yarn lint
 
   test:
     runs-on: ubuntu-latest
     container: node:14.11.0-buster
     steps:
       - name: Checkout actual branch
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Install dependencies
-      - run: yarn
+        run: yarn
       - name: Run unit tests
-      - run: yarn test:unit
+        run: yarn test:unit
