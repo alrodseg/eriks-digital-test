@@ -9,4 +9,5 @@
  - Custom webpack bundle.
  - Styled components.
  - Stateful hot reload via React Fast Refresh.
- - Abstract env variables for differen environments via dotenv.
+ - Simple CI via Github Actions.
+ - Abstract env variables for different environments via dotenv.
