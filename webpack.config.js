@@ -31,6 +31,10 @@ module.exports = {
             ].filter(Boolean),
           },
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       }
     ],
   },

@@ -8,6 +8,7 @@
 #### Dev features
  - Custom webpack bundle.
  - Styled components.
+ - Lazy loaded images via react-lazyload.
  - Stateful hot reload via React Fast Refresh.
  - Simple CI via Github Actions.
  - Abstract env variables for different environments via dotenv.
