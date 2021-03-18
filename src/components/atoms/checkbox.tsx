@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {fontWeight} from '../../utils/styles/font';
 import CheckboxSvg from '../../assets/icons/checkbox.svg';
@@ -27,20 +27,19 @@ const CheckboxTitle = styled.span<{selected: boolean}>`
 `;
 
 interface CheckboxProps {
-  onSelect: (isSelected: boolean, value: string) => void;
+  onSelect: (isSelected: boolean) => void;
   title: string;
-  value: string;
   selected?: boolean;
 }
 
 const Checkbox = (props: CheckboxProps) => {
-  const {onSelect, title, value, selected = false} = props;
-  const toggleSelection = (value: string) => {
-    onSelect(!selected, value);
+  const {onSelect, title, selected = false} = props;
+  const toggleSelection = () => {
+    onSelect(!selected);
   }
 
   return (
-    <CheckboxContainer onClick={() => toggleSelection(value)}>
+    <CheckboxContainer onClick={() => toggleSelection()}>
       <SvgWrapper>
         {selected ? (
           <CheckboxSelectedSvg />

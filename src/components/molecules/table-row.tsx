@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {fontWeight} from '../../utils/styles/font';
 import colors from '../../utils/styles/colors';
 import TableBodyCell from '../atoms/table-body-cell';
 import TableHeaderCell from '../atoms/table-header-cell';
