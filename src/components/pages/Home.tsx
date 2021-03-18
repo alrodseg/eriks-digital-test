@@ -3,9 +3,16 @@ import styled from 'styled-components';
 import {getAllProducts} from '../../api/products';
 import {Product} from '../../types/product';
 import ProductCompareTable from '../organisms/product-compare-table';
+import Text from '../atoms/text';
+
+const PageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const TableContainer = styled.div`
   display: flex;
+  flex-direction: column;
   width: 75%;
 `;
 
@@ -26,15 +33,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <PageContainer>
       {isLoading ? (
         <div>Fetching data...</div>
       ) : (
         <TableContainer>
+          <Text value={`${products.length} products comparison`} tag={'h3'} />
           <ProductCompareTable products={products}/>
         </TableContainer>
       )}
-    </div>
+    </PageContainer>
   );
 };
 
