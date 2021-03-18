@@ -13,9 +13,8 @@ const renderCheckboxes = (products: Product[], selectedProducts: string[], setSe
       {products.map((product, i) => (
         <Checkbox
           title={product.name}
-          value={product.articleNumber}
           selected={selectedProducts.indexOf(product.articleNumber) > -1}
-          onSelect={(selected, value) => {
+          onSelect={(selected) => {
             if(selected) {
               setSelectedProducts([product.articleNumber , ...selectedProducts]);
             } else {
@@ -52,7 +51,7 @@ const ProductCompareTable = (props: ProductCompareTableProps) => {
   const keys = Object.keys(mappedProducts[0]);
   const value = (key: keyof ProductCompareSpecs) => mappedProducts.map(product => product[key]);
   const allValues = keys.map((key: keyof ProductCompareSpecs) => value(key));
-  const allBadges = includedProducts.map(product => <Badges sources={product.badges} />);
+  const allBadges = includedProducts.map((product, i) => <Badges sources={product.badges} key={i} />);
 
   return (
     <Table
